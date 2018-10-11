@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>With God's help </title>
+<link rel="stylesheet" href="w3.css">
+</head>
+
+<body>
+
+With God's help!
+
+<div class="w3-light-grey">
+  <div id="myBar" class="w3-container w3-blue w3-round-large" style="height:30px;width:1%"></div>
+</div>
+
+<button class="w3-button w3-light-grey" onclick="move()">Start Game</button>
+
+<script>
+function move() {
+    var elem = document.getElementById("myBar"); 
+    var width = 1;
+	var RND = Math.random();
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width*RND >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = RND*width + '%'; 
+        }
+    }
+}
+</script>
+
+</body>
+
+</html>
